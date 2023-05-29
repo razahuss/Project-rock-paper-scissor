@@ -10,14 +10,8 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    computerChoice.textContent = computerSelection;
-    if(playerwins >= 5 || computerwins >= 5){
-        winner.textContent = playerwins >= 5 ? "You Won the Game" : "The Computer Won the Game";
-        playerwins = 0;
-        computerwins = 0;
-        pwins.textContent = "Player wins: " + playerwins;
-        cwins.textContent = "Computer wins: " + computerwins;
-    }
+    computerChoice.textContent = "The computer chose: " + computerSelection;
+    winner.textContent = "winner of the game";
     if(playerSelection === "rock" && computerSelection === "scissor"){
         result.textContent = "You Win! Scissor beats Rock";
         playerwins++;
@@ -53,6 +47,13 @@ function playRound(playerSelection, computerSelection) {
     }
     else{
         result.textContent = "Error";
+    }
+    if(playerwins >= 5 || computerwins >= 5){
+        winner.textContent = playerwins >= 5 ? "Winner of the game: You Won the Game" : "Winner of the game: The Computer Won the Game";
+        playerwins = 0;
+        computerwins = 0;
+        pwins.textContent = "Player wins: " + playerwins;
+        cwins.textContent = "Computer wins: " + computerwins;
     }
 }
 
